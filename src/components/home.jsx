@@ -153,7 +153,7 @@ Driven by curiosity and guided by a soft yet professional aesthetic, I aim to bu
             {
               title: "Array Objects",
               desc: "Array of objects is a data structure used to store multiple items (objects) in a single variable",
-              imgs: ["uvify1.png", "uvify2.png", "uvify3.png"],
+              imgs: ["array.png", "ray.png"],
               url: "Array Objects/index.html"
             }
             
