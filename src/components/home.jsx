@@ -136,20 +136,27 @@ Driven by curiosity and guided by a soft yet professional aesthetic, I aim to bu
               title: "Loop",
               desc: "A looping animation playground featuring dreamy visuals using HTML and CSS.",
               img: "loop.png",
-              url: "Loop/index.html"
+              url: "Calculator/index.html"
             },
             {
               title: "Calculator Website",
               desc: "A clean and cute calculator app with pastel pink aesthetics.",
               img: "calculator.png",
-              url: "Calculator/index.html"
+              url: "Loop/index.html"
             },
             {
               title: "To Do List Website",
               desc: "A dreamy React-based to-do list app for daily goals.",
               imgs: ["todo.png", "list.png"],
               url: "https://to-do-client-brown.vercel.app/"
+            },
+            {
+              title: "Array Objects",
+              desc: "Array of objects is a data structure used to store multiple items (objects) in a single variable",
+              imgs: ["uvify1.png", "uvify2.png", "uvify3.png"],
+              url: "Array Objects/index.html"
             }
+            
           ].map((project, index) => (
             <div
               key={index}
