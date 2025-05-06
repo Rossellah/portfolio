@@ -110,8 +110,13 @@ function Home() {
 >
   <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-center text-pink-800">About Me</h2>
   <p className="text-base text-center text-pink-700 leading-relaxed">
-    A passionate web developer with a love for pastel palettes and pixel-perfect layouts. I’m all about
-    crafting interfaces that feel like warm hugs—clean, cute, and totally user-friendly.
+  A passionate Information Technology student and creative web developer from Gaddani, Tayum, Abra, with a deep love for pastel palettes, aesthetic design, and pixel-perfect layouts. I specialize in crafting clean, cute, and user-friendly interfaces that feel like warm hugs—designs that not only look good but also make people feel at ease.
+
+With a strong foundation in front-end technologies like HTML, CSS, JavaScript, and frameworks like Bootstrap and React, I enjoy turning static concepts into interactive, responsive websites. I'm also exploring back-end tools such as PHP, MySQL, and Python to broaden my full-stack development skills.
+
+Driven by curiosity and guided by a soft yet professional aesthetic, I aim to build digital experiences that are both functional and emotionally engaging. Whether it's for a personal portfolio, a client project, or a classroom assignment, I pour my heart into every line of code.
+
+
   </p>
 </section>
 
