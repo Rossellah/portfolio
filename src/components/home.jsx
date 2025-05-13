@@ -110,16 +110,10 @@ function Home() {
 >
   <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-center text-pink-800">About Me</h2>
   <p className="text-base text-center text-pink-700 leading-relaxed">
-  A passionate Information Technology student and creative web developer from Gaddani, Tayum, Abra, with a deep love for pastel palettes, aesthetic design, and pixel-perfect layouts. I specialize in crafting clean, cute, and user-friendly interfaces that feel like warm hugs—designs that not only look good but also make people feel at ease.
-
-With a strong foundation in front-end technologies like HTML, CSS, JavaScript, and frameworks like Bootstrap and React, I enjoy turning static concepts into interactive, responsive websites. I'm also exploring back-end tools such as PHP, MySQL, and Python to broaden my full-stack development skills.
-
-Driven by curiosity and guided by a soft yet professional aesthetic, I aim to build digital experiences that are both functional and emotionally engaging. Whether it's for a personal portfolio, a client project, or a classroom assignment, I pour my heart into every line of code.
-
-
+ I am an Information Technology student and passionate web developer from Gaddani, Tayum, Abra, with a strong appreciation for pastel palettes, aesthetic design, and detail-oriented, pixel-perfect layouts. I specialize in creating clean, user-friendly interfaces that combine visual charm with seamless functionality—designs that not only look good but also create a sense of comfort and ease for users.
+With strong front-end skills in HTML, CSS, JavaScript, Bootstrap, and React, I bring ideas to life through responsive, interactive web designs. I am also expanding my back-end expertise with PHP, MySQL, and Python, aiming to become a full-stack developer. Passionate and detail-driven, I approach every project—whether academic or personal—with creativity, care, and a commitment to excellence.
   </p>
 </section>
-
 
       {/* Featured Projects */}
       <section id="projects" className="scroll-mt-24 max-w-6xl mx-auto px-4 sm:px-6">
@@ -133,14 +127,14 @@ Driven by curiosity and guided by a soft yet professional aesthetic, I aim to bu
               url: "converter-activity/index.html"
             },
             {
-              title: "Loop",
-              desc: "A looping animation playground featuring dreamy visuals using HTML and CSS.",
+              title: "Calculator Website",
+              desc: "A clean and cute calculator app with pastel pink aesthetics.",
               img: "loop.png",
               url: "Calculator/index.html"
             },
             {
-              title: "Calculator Website",
-              desc: "A clean and cute calculator app with pastel pink aesthetics.",
+              title: "Loop",
+              desc: "A looping animation playground featuring dreamy visuals using HTML and CSS.",
               img: "calculator.png",
               url: "Loop/index.html"
             },
@@ -207,12 +201,6 @@ Driven by curiosity and guided by a soft yet professional aesthetic, I aim to bu
   </div>
 </section>
 
-
-
-
-
-
-
       {/* Contact Section */}
       <section
   id="contact"
@@ -257,7 +245,7 @@ Driven by curiosity and guided by a soft yet professional aesthetic, I aim to bu
     <a href="https://github.com/Rossellah" target="_blank"><FaGithub /></a>
     <a href="https://www.linkedin.com/in/rossellah-marie-boda%C3%B1o-2195b7349" target="_blank"><FaLinkedin /></a>
   </div>
-        © 2025 Rossellah Marie Bodaño. Made with Love.
+        © 2025 Rossellah Marie Bodaño.
       </footer>
     </div>
   );
