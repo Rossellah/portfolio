@@ -6,20 +6,22 @@ import {
   FaBars,
   FaTimes,
   FaFacebook,
-  FaInstagram,
   FaTiktok,
-  FaTelegram
+  FaTelegram,
+  FaPhoneAlt
 } from "react-icons/fa";
 
 function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [active, setActive] = useState("home");
+
 
   return (
     <div id="home" className="min-h-screen bg-gradient-to-br from-pink-100 via-purple-100 to-pink-200 text-pink-800 font-serif">
 
       {/* Navigation Bar */}
       <nav className="bg-white bg-opacity-90 shadow-md sticky top-0 z-50 backdrop-blur-sm">
-  <div className="max-w-screen-xl mx-auto px-4 sm:px-6 flex items-center justify-between">
+  <div className="max-w-screen-xl mx-auto px-4 sm:px-6 flex items-center justify-between py-3">
     <h1 className="text-xl sm:text-3xl font-bold text-pink-700">My Portfolio</h1>
     <button
       className="sm:hidden text-pink-700 text-2xl focus:outline-none"
@@ -30,66 +32,34 @@ function Home() {
     <ul
       className={`${
         menuOpen ? "flex" : "hidden"
-      } flex-col sm:flex sm:flex-row gap-4 sm:gap-6 text-sm sm:text-base font-medium text-pink-700 mt-4 sm:mt-0 sm:items-center absolute right-0 bg-white bg-opacity-95 px-6 py-4 shadow-md backdrop-blur-md`}
-      style={{
-        top: "12.4px",  
-        width: "max-content", 
+      } flex-col sm:flex sm:flex-row gap-4 sm:gap-6 text-sm sm:text-base font-medium text-pink-700 sm:items-center absolute sm:static right-0 bg-white sm:bg-transparent bg-opacity-95 px-6 py-4 sm:p-0 shadow-md sm:shadow-none backdrop-blur-md sm:backdrop-blur-none rounded-l-xl sm:rounded-none transition-all duration-300`}
+      style={menuOpen ? {
+        top: "100%",
         borderTopLeftRadius: "8px",
-        borderBottomLeftRadius: "8px", 
-        borderTopRightRadius: "0", 
-        borderBottomRightRadius: "0", 
-      }}
+        borderBottomLeftRadius: "8px"
+      } : {}}
     >
-      <li>
-        <a
-          href="#home"
-          onClick={() => setMenuOpen(false)}
-          className="hover:text-pink-500 transition-all duration-300"
-        >
-          Home
-        </a>
-      </li>
-      <li>
-        <a
-          href="#about"
-          onClick={() => setMenuOpen(false)}
-          className="hover:text-pink-500 transition-all duration-300"
-        >
-          About Me
-        </a>
-      </li>
-      <li>
-        <a
-          href="#projects"
-          onClick={() => setMenuOpen(false)}
-          className="hover:text-pink-500 transition-all duration-300"
-        >
-          Projects
-        </a>
-      </li>
-      <li>
-        <a
-          href="#certificates"
-          onClick={() => setMenuOpen(false)}
-          className="hover:text-pink-500 transition-all duration-300"
-        >
-          Certificates
-        </a>
-      </li>
-      <li>
-        <a
-          href="#contact"
-          onClick={() => setMenuOpen(false)}
-          className="hover:text-pink-500 transition-all duration-300"
-        >
-          Contact
-        </a>
-      </li>
+   {["home", "about", "skills", "projects", "certificates", "contact"].map((section) => (
+        <li key={section}>
+          <a
+            href={`#${section}`}
+            onClick={() => {
+              setMenuOpen(false);
+              setActive(section);
+            }}
+            className={`hover:text-pink-500 transition-all duration-300 ${
+              active === section ? "text-pink-500 font-bold underline" : ""
+            }`}
+          >
+            {section === "home"
+              ? "Home"
+              : section.charAt(0).toUpperCase() + section.slice(1).replace(/([A-Z])/g, " $1")}
+          </a>
+        </li>
+      ))}
     </ul>
   </div>
 </nav>
-
-
 
       {/* Intro Section */}
       <section className="text-center pt-14 pb-20 px-4 sm:px-6">
@@ -106,8 +76,9 @@ function Home() {
       {/* About Me */}
       <section
   id="about"
-  className="scroll-mt-24 bg-white bg-opacity-60 rounded-2xl p-5 sm:p-8 mb-16 shadow-md border border-pink-300 max-w-[95%] sm:max-w-4xl mx-4 sm:mx-auto hover:shadow-xl transition-transform transform hover:scale-105 cursor-pointer"
+  className="scroll-mt-24 bg-white bg-opacity-60 rounded-2xl p-5 sm:p-8 mb-8 shadow-md border border-pink-300 max-w-[95%] sm:max-w-4xl mx-4 sm:mx-auto hover:shadow-xl transition-transform transform hover:scale-105 cursor-pointer"
 >
+
   <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-center text-pink-800">About Me</h2>
   <p className="text-base text-center text-pink-700 leading-relaxed">
  I am an Information Technology student and passionate web developer from Gaddani, Tayum, Abra, with a strong appreciation for pastel palettes, aesthetic design, and detail-oriented, pixel-perfect layouts. I specialize in creating clean, user-friendly interfaces that combine visual charm with seamless functionality—designs that not only look good but also create a sense of comfort and ease for users.
@@ -115,9 +86,41 @@ With strong front-end skills in HTML, CSS, JavaScript, Bootstrap, and React, I b
   </p>
 </section>
 
+ <section id="skills" className="pt-4 pb-12 px-6">
+  <div className="max-w-screen-lg mx-auto text-center">
+    <h2 className="text-3xl font-bold text-pink-700 mb-8 font-[Times_New_Roman] tracking-wide animate-pulse">
+      Skills
+    </h2>
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 text-pink-900 font-medium">
+      {[
+        { name: "HTML", img: "https://cdn-icons-png.flaticon.com/512/732/732212.png" },
+        { name: "CSS", img: "https://cdn-icons-png.flaticon.com/512/732/732190.png" },
+        { name: "JavaScript", img: "https://cdn-icons-png.flaticon.com/512/5968/5968292.png" },
+        { name: "React", img: "https://cdn-icons-png.flaticon.com/512/1126/1126012.png" },
+        { name: "Tailwind CSS", img: "https://cdn-icons-png.flaticon.com/512/5968/5968672.png" },
+        { name: "Python", img: "https://cdn-icons-png.flaticon.com/512/5968/5968350.png" },
+        { name: "Git", img: "https://cdn-icons-png.flaticon.com/512/2111/2111288.png" },
+        { name: "Responsive Design", img: "https://cdn-icons-png.flaticon.com/512/1006/1006771.png" }
+      ].map((skill, index) => (
+        <div
+          key={index}
+          className="bg-white rounded-2xl p-5 shadow-lg hover:shadow-pink-200 transition-transform duration-300 transform hover:scale-105 border border-pink-100 flex flex-col items-center"
+        >
+          <img
+            src={skill.img}
+            alt={skill.name}
+            className="w-16 h-16 mb-4 object-contain rounded-full border border-pink-200 shadow-sm"
+          />
+          <p className="text-lg font-semibold text-pink-700">{skill.name}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section><br></br>
+
       {/* Featured Projects */}
       <section id="projects" className="scroll-mt-24 max-w-6xl mx-auto px-4 sm:px-6">
-        <h2 className="text-2xl sm:text-3xl font-bold mb-10 text-center text-pink-800">Featured Projects</h2>
+         <h2 className="text-3xl font-bold text-center text-pink-700 mb-8 font-[Times_New_Roman] tracking-wide animate-pulse">Featured Projects</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-10">
           {[
             {
@@ -233,20 +236,36 @@ With strong front-end skills in HTML, CSS, JavaScript, Bootstrap, and React, I b
   </form>
 </section>
 
+<footer className="bg-white py-10 px-4 mt-20 rounded-t-3xl shadow-inner">
+  <div className="max-w-screen-md mx-auto text-center">
+    {/* Social Icons */}
+    <div className="flex justify-center gap-6 text-2xl text-pink-600 mb-6 flex-wrap">
+      <a href="https://facebook.com/rossellah.07" target="_blank" className="hover:text-pink-800 transition duration-300"><FaFacebook /></a>
+      <a href="https://tiktok.com/@_sellang/" target="_blank" className="hover:text-pink-800 transition duration-300"><FaTiktok /></a>
+      <a href="https://t.me/lhengiee/" target="_blank" className="hover:text-pink-800 transition duration-300"><FaTelegram /></a>
+      <a href="https://github.com/Rossellah" target="_blank" className="hover:text-pink-800 transition duration-300"><FaGithub /></a>
+      <a href="https://www.linkedin.com/in/rossellah-marie-boda%C3%B1o-2195b7349" target="_blank" className="hover:text-pink-800 transition duration-300"><FaLinkedin /></a>
+    </div>
 
+    {/* Contact Info */}
+    <div className="text-pink-800 text-sm sm:text-base font-medium space-y-2">
+      <p className="flex items-center justify-center gap-2">
+        <FaEnvelope className="text-pink-700" />
+        <a href="mailto:dbodanorossellahmarie@gmail.com" className="underline hover:text-pink-900 transition">dbodanorossellahmarie@gmail.com</a>
+      </p>
+      <p className="flex items-center justify-center gap-2">
+        <FaPhoneAlt className="text-pink-700" />
+        <span className="hover:text-pink-900 transition">09603458372</span> {/* Replace with your actual number */}
+      </p>
+    </div>
 
-      {/* Footer */}
-      <footer className="text-center mt-20 mb-6 text-base sm:text-lg font-semibold text-pink-800 px-4">
-      <div className="flex justify-center gap-6 text-xl sm:text-2xl text-pink-600 mb-6 flex-wrap">
-    <a href="https://facebook.com/rossellah.07" target="_blank"><FaFacebook /></a>
-    <a href="https://instagram.com/@LHENGIEE/" target="_blank"><FaInstagram /></a>
-    <a href="https://tiktok.com/@_sellang/" target="_blank"><FaTiktok /></a>
-    <a href="https://t.me/lhengiee/" target="_blank"><FaTelegram /></a>
-    <a href="https://github.com/Rossellah" target="_blank"><FaGithub /></a>
-    <a href="https://www.linkedin.com/in/rossellah-marie-boda%C3%B1o-2195b7349" target="_blank"><FaLinkedin /></a>
+    {/* Footer note */}
+    <p className="mt-8 text-lg sm:text-xl text-pink-700 font-bold tracking-wide">
+      &copy; 2025 Rossellah Marie Bodaño. All rights reserved.
+    </p>
   </div>
-        © 2025 Rossellah Marie Bodaño.
-      </footer>
+</footer>  
+      
     </div>
   );
 }
