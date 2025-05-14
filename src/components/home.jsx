@@ -69,7 +69,7 @@ function Home() {
         />
         <h1 className="text-2xl sm:text-5xl font-bold mb-2 text-pink-800 leading-tight">Rossellah Marie Bodaño</h1>
         <p className="text-sm sm:text-lg max-w-md sm:max-w-xl mx-auto text-pink-700">
-          Frontend Developer · UI/UX Lover · Pastel Enthusiast
+          Frontend Developer · UI/UX Specialist
         </p>
       </section>
 
