@@ -2,7 +2,6 @@ import { useState } from "react";
 import {
   FaGithub,
   FaLinkedin,
-  FaEnvelope,
   FaBars,
   FaTimes,
   FaFacebook,
@@ -81,8 +80,9 @@ function Home() {
 
   <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-center text-pink-800">About Me</h2>
   <p className="text-base text-center text-pink-700 leading-relaxed">
- I am an Information Technology student and passionate web developer from Gaddani, Tayum, Abra, with a strong appreciation for pastel palettes, aesthetic design, and detail-oriented, pixel-perfect layouts. I specialize in creating clean, user-friendly interfaces that combine visual charm with seamless functionality—designs that not only look good but also create a sense of comfort and ease for users.
-With strong front-end skills in HTML, CSS, JavaScript, Bootstrap, and React, I bring ideas to life through responsive, interactive web designs. I am also expanding my back-end expertise with PHP, MySQL, and Python, aiming to become a full-stack developer. Passionate and detail-driven, I approach every project—whether academic or personal—with creativity, care, and a commitment to excellence.
+I am an Information Technology student and a dedicated web developer from Gaddani, Tayum, Abra, with a profound appreciation for pastel color palettes, refined aesthetics, and meticulous, pixel-perfect layouts. I specialize in designing clean, intuitive interfaces that seamlessly merge visual elegance with robust functionality, ensuring that every design not only captivates the eye but also provides a comfortable and user-friendly experience.
+
+Equipped with advanced skills in HTML, CSS, JavaScript, Bootstrap, and React, I excel in transforming conceptual ideas into responsive, interactive web applications. Additionally, I am actively expanding my expertise in back-end technologies such as PHP, MySQL, and Python, with the goal of evolving into a proficient full-stack developer. Whether engaged in academic projects or personal endeavors, I approach each challenge with creativity, precision, and an unwavering commitment to excellence.
   </p>
 </section>
 
@@ -91,7 +91,7 @@ With strong front-end skills in HTML, CSS, JavaScript, Bootstrap, and React, I b
     <h2 className="text-3xl font-bold text-pink-700 mb-8 font-[Times_New_Roman] tracking-wide animate-pulse">
       Skills
     </h2>
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 text-pink-900 font-medium">
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-pink-900 font-medium">
       {[
         { name: "HTML", img: "https://cdn-icons-png.flaticon.com/512/732/732212.png" },
         { name: "CSS", img: "https://cdn-icons-png.flaticon.com/512/732/732190.png" },
@@ -99,12 +99,11 @@ With strong front-end skills in HTML, CSS, JavaScript, Bootstrap, and React, I b
         { name: "React", img: "https://cdn-icons-png.flaticon.com/512/1126/1126012.png" },
         { name: "Tailwind CSS", img: "https://cdn-icons-png.flaticon.com/512/5968/5968672.png" },
         { name: "Python", img: "https://cdn-icons-png.flaticon.com/512/5968/5968350.png" },
-        { name: "Git", img: "https://cdn-icons-png.flaticon.com/512/2111/2111288.png" },
-        { name: "Responsive Design", img: "https://cdn-icons-png.flaticon.com/512/1006/1006771.png" }
+       
       ].map((skill, index) => (
         <div
           key={index}
-          className="bg-white rounded-2xl p-5 shadow-lg hover:shadow-pink-200 transition-transform duration-300 transform hover:scale-105 border border-pink-100 flex flex-col items-center"
+          className="bg-white rounded-2xl p-5 shadow-lg hover:shadow-pink-200 transition-transform duration-300 transform hover:scale-105 active:scale-105 focus:scale-105 border border-pink-100 flex flex-col items-center"
         >
           <img
             src={skill.img}
@@ -125,31 +124,31 @@ With strong front-end skills in HTML, CSS, JavaScript, Bootstrap, and React, I b
           {[
             {
               title: "Converter Website",
-              desc: "A simple and elegant unit converter built with HTML, CSS, and JavaScript.",
+              desc: "A simple web applicaion that allows users to convert Philippine peso (PHP)into other currencies, uch as US Dollar (USD), Chinese uan (CNY), and Japanese Yen (JYP)",
               img: "converter.png",
               url: "converter-activity/index.html"
             },
             {
               title: "Calculator Website",
-              desc: "A clean and cute calculator app with pastel pink aesthetics.",
+              desc: "A calculator built with JavaScript that performs basic arithmetic operations.",
               img: "loop.png",
               url: "Calculator/index.html"
             },
             {
               title: "Loop",
-              desc: "A looping animation playground featuring dreamy visuals using HTML and CSS.",
+              desc: "A loop that lets you input a number and can see the sum, factorial, odd, and even umbersuing Javascript.",
               img: "calculator.png",
               url: "Loop/index.html"
             },
             {
               title: "To Do List Website",
-              desc: "A dreamy React-based to-do list app for daily goals.",
+              desc: "A React-based to-do list app for daily goals. Users can create, update, delete, and marked as done.",
               imgs: ["todo.png", "list.png"],
               url: "https://to-do-client-brown.vercel.app/"
             },
             {
-              title: "Array Objects",
-              desc: "Array of objects is a data structure used to store multiple items (objects) in a single variable",
+              title: "Employee Management",
+              desc: "Employee Management is a employee list system that uses JavaScript arrays and objects to store,manage, and display the employee information.",
               imgs: ["array.png", "ray.png"],
               url: "Array Objects/index.html"
             }
@@ -157,7 +156,7 @@ With strong front-end skills in HTML, CSS, JavaScript, Bootstrap, and React, I b
           ].map((project, index) => (
             <div
               key={index}
-              className="bg-white bg-opacity-60 rounded-2xl p-5 shadow-md border border-pink-300 hover:shadow-xl transition-transform transform hover:scale-105 active:scale-95 cursor-pointer"
+              className="bg-white bg-opacity-60 rounded-2xl p-5 shadow-md border border-pink-300 hover:shadow-xl transition-transform transform hover:scale-105 active:scale-105 focus:scale-105 cursor-pointer"
               onClick={() => window.open(project.url, "_blank")}
             >
               {project.img ? (
@@ -187,22 +186,29 @@ With strong front-end skills in HTML, CSS, JavaScript, Bootstrap, and React, I b
       </section>
 
       {/* Certificates */}
-      <section id="certificates">
-  <h2 className="text-3xl font-bold mt-16 text-center text-pink-800">Certificates</h2>
+<section id="certificates" className="scroll-mt-24">
+  <h2 className="text-3xl font-bold mt-16 text-center text-pink-800">
+    Certificates
+  </h2>
   <div className="max-w-screen-lg mx-auto px-4 sm:px-6 mt-8">
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
       {["python.png", "data.png", "aii.png"].map((cert, index) => (
         <div
           key={index}
-          className="w-full rounded-2xl border border-pink-200 shadow-md overflow-hidden hover:shadow-lg transition-transform transform hover:scale-105 active:scale-95 cursor-pointer"
+          className="w-full max-w-xs mx-auto rounded-2xl border border-pink-200 shadow-md hover:shadow-lg transition-transform transform hover:scale-105 active:scale-105 focus:scale-105 cursor-pointer p-4 bg-white bg-opacity-70"
           onClick={() => window.open(cert, "_blank")}
         >
-          <img src={cert} alt={`Certificate ${index + 1}`} className="w-full h-80 object-cover" />
+          <img
+            src={cert}
+            alt={`Certificate ${index + 1}`}
+            className="w-full h-auto object-contain rounded-md"
+          />
         </div>
       ))}
     </div>
   </div>
 </section>
+
 
       {/* Contact Section */}
       <section
@@ -249,10 +255,6 @@ With strong front-end skills in HTML, CSS, JavaScript, Bootstrap, and React, I b
 
     {/* Contact Info */}
     <div className="text-pink-800 text-sm sm:text-base font-medium space-y-2">
-      <p className="flex items-center justify-center gap-2">
-        <FaEnvelope className="text-pink-700" />
-        <a href="mailto:dbodanorossellahmarie@gmail.com" className="underline hover:text-pink-900 transition">dbodanorossellahmarie@gmail.com</a>
-      </p>
       <p className="flex items-center justify-center gap-2">
         <FaPhoneAlt className="text-pink-700" />
         <span className="hover:text-pink-900 transition">09603458372</span> {/* Replace with your actual number */}
